@@ -9,14 +9,16 @@
         <a class='btn btn-primary' href='{% url 'serie:cadastra_temporada' %}'><i class='fa-solid fa-plus'></i></a>
         <a class='btn btn-primary' href='{% url 'serie:cadastra_episodio' %}'><i class='fa-solid fa-plus'></i></a>
     {% endif %}
-    <div class='row'>
+    <div class='row my-2'>
 
     {% for s in series %}
     <div class='col-3'>
-        <div class="card p-2 text-center">
-            <img src="{{s.capa.url}}"/>
-        <a href="{% url 'serie:detalhes_serie' s.slug %}">{{s}}</a>    
-        </div>
+        <div class="card" style="width: 18rem; cursor:pointer;" onclick="location.href='{% url 'serie:detalhes_serie' s.slug %}'">
+            <img class="card-img-top" src="{{s.capa.url}}" alt="Card image cap">
+            <div class="card-body text-center">
+                <p>{{s}}</p>
+            </div>
+          </div>
     </div>
     {% endfor %}
     </div>
