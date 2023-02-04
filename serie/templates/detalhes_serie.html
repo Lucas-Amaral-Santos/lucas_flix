@@ -11,6 +11,10 @@
             <div class="card-body text-center">
                 <p>{{serie.descricao}}</p>
             </div>
+            {% if request.user.is_superuser %}
+                <a class='btn btn-primary' href='{% url 'serie:cadastra_temporada' serie.slug %}'><i class='fa-solid fa-plus'></i></a>
+                <a class='btn btn-primary' href='{% url 'serie:cadastra_episodio' serie.slug %}'><i class='fa-solid fa-plus'></i></a>
+            {% endif %}
             {% if temporadas %}
                 {% for t in temporadas %}
                     <h5>{{t}}</h5>

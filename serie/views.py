@@ -26,8 +26,8 @@ def cadastra_serie(request):
 
     return render(request, 'cadastra_serie.html', {'form': form_serie})
 
-def cadastra_temporada(request):
-    form_temporada = TemporadaForm()
+def cadastra_temporada(request, serie=None):
+    form_temporada = TemporadaForm(serie_choice=serie)
 
     if request.method == 'POST':
         form_temporada = TemporadaForm(request.POST)
@@ -42,7 +42,7 @@ def cadastra_temporada(request):
     return render(request, 'cadastra_serie.html', {'form': form_temporada})
 
 
-def cadastra_episodio(request, serie):
+def cadastra_episodio(request, serie=None):
     form_episodio = EpisodioForm(serie_choice=serie)
     
     if request.method == 'POST':
