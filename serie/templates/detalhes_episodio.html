@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class='container'>
+        <div class='card'>
+            <div class="text-center">
+                <video width='400' preload="metadata" controls>
+                    <source src="{{episodio.video.url}}" type='video/mp4'>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="card-title text-center">
+                <h1>{{episodio}}</h1>
+            </div>
+            <div class="card-body text-center">
+                <p>{{episodio.temporada}}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

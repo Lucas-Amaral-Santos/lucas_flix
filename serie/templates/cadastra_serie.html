@@ -1,0 +1,8 @@
+{% block content %}
+    <form method='POST' class='form' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+
+        <button class='btn btn-primary' type='submit'>Enviar</button>
+    </form>
+{% endblock %}

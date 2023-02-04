@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class='container'>
+        <div class='card'>
+            <div class="text-center">
+            <img src="{{serie.capa.url}}" class='image-detalhes'/>
+            </div>
+            <div class="card-title text-center">
+                <h1>{{serie.titulo}}</h1>
+            </div>
+            <div class="card-body text-center">
+                <p>{{serie.descricao}}</p>
+            </div>
+            {% if temporadas %}
+                {% for t in temporadas %}
+                    <h5>{{t}}</h5>
+                    {% for e in episodios %}
+                        {% if e.temporada == t %}
+                            <a href='{% url 'serie:detalhes_episodio' e.slug %}'>{{e}}<br></a>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

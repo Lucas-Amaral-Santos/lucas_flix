@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class='row'>
+
+    {% for s in series %}
+    <div class='col-3'>
+        <div class="card p-2 text-center">
+            <img src="{{s.capa.url}}"/>
+        <a href="{% url 'serie:detalhes_serie' s.slug %}">{{s}}</a>    
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock content %}
