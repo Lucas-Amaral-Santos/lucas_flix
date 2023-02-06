@@ -5,6 +5,7 @@
 {% load static %}
 
 {% block content %}
+    {% include 'navbar.html' %}
     <div class='container'>
         <form method='POST' class='form' enctype="multipart/form-data">
             {% csrf_token %}
