@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% include 'navbar.html' %}
     <div class='container py-2'>
-        <div class='card'>
+        <div class='card p-3'>
             <div class="text-center">
                 <video width='400' preload="metadata" autoplay controls>
                     <source src="{{episodio.video.url}}" type='video/mp4'>
