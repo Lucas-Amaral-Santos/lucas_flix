@@ -3,12 +3,13 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-    {% if request.user.is_superuser %}
-        <a class='btn btn-primary' href='{% url 'serie:cadastra_serie' %}'><i class='fa-solid fa-plus'></i></a>
-        <a class='btn btn-primary' href='{% url 'serie:cadastra_temporada' %}'><i class='fa-solid fa-plus'></i></a>
-        <a class='btn btn-primary' href='{% url 'serie:cadastra_episodio' %}'><i class='fa-solid fa-plus'></i></a>
-    {% endif %}
+
+{% include 'navbar.html' %}
+
+<div class="container">    
+    
+    
+    
     <div class='row my-2'>
 
     {% for s in series %}
@@ -23,4 +24,5 @@
     {% endfor %}
     </div>
 </div>
+
 {% endblock content %}
