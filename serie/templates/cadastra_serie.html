@@ -4,9 +4,13 @@
 
 {% load static %}
 
+{% block title %}
+Lucas Flix
+{% endblock title %}
+
 {% block content %}
-    {% include 'navbar.html' %}
-    <div class='container'>
+    {% include 'navbar.html' with active='serie' %}
+    <div class='container text-white'>
         <form method='POST' class='form' enctype="multipart/form-data">
             {% csrf_token %}
             {{form|crispy}}

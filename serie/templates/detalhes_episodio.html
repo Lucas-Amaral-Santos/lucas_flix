@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
+
+{% block title %}
+Lucas Flix
+{% endblock title %}
+
 {% block content %}
-    {% include 'navbar.html' %}
+    {% include 'navbar.html' with active='episodio' %}
     <div class='container py-2'>
         <div class='card p-3'>
-            <div class="text-center">
-                <video width='400' preload="metadata" autoplay controls>
+            <div class="text-center text-white">
+                <video width='400' preload="metadata" autopictureinpicture autoplay controls>
                     <source src="{{episodio.video.url}}" type='video/mp4'>
                     Your browser does not support the video tag.
                 </video>
